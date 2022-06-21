@@ -4,12 +4,20 @@ def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     print(pilot_tests)
     for key in pilot_tests:
         for value in key:
-            print(value)
-            print(key[value])
-            dictionary_of_results[key] = key[value]
+            if dictionary_of_results.get(value)==None:
+                dictionary_of_results[value] = key[value]
+            else:
+                currArr = [dictionary_of_results[value]]
+                print("currarr")
+                print(currArr)
+                print("value")
+                print(key[value])
+                if not key[value] in currArr:
+                    currArr.append(key[value])
+                    dictionary_of_results[value] = currArr
+            # if dictionary_of_results.get(key)
             
     # ..... complete code .......
-
     return dictionary_of_results
 
 
