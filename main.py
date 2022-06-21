@@ -14,7 +14,7 @@ syncTest1["Rei"] = "Eva-00"
 syncTest1["Shinji"] = "Eva-01"
 # create second dictionary, add 2 key-value pairs
 syncTest2 = {};
-syncTest2["Asuka"] = "Eva-02";
+syncTest2["Asuka"] = "Eva-02 preethie";
 syncTest2["Shinji"] = "Eva-01";
 # create third dictionary object, add 3 key-value pairs
 # we can also create it as a literal
