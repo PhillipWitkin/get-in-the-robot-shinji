@@ -4,19 +4,15 @@ def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     print(pilot_tests)
     for key in pilot_tests:
         for value in key:
-            if dictionary_of_results.get(value)==None:
+            if dictionary_of_results.get(value) == None:
                 dictionary_of_results[value] = key[value]
             else:
                 currArr = [dictionary_of_results[value]]
-                print("currarr")
-                print(currArr)
-                print("value")
-                print(key[value])
                 if not key[value] in currArr:
                     currArr.append(key[value])
+                    currArr.sort()
                     dictionary_of_results[value] = currArr
-            # if dictionary_of_results.get(key)
-            
+
     # ..... complete code .......
     return dictionary_of_results
 
@@ -27,9 +23,9 @@ syncTest1 = {}
 syncTest1["Rei"] = "Eva-00"
 syncTest1["Shinji"] = "Eva-01"
 # create second dictionary, add 2 key-value pairs
-syncTest2 = {};
-syncTest2["Asuka"] = "Eva-02";
-syncTest2["Shinji"] = "Eva-01";
+syncTest2 = {}
+syncTest2["Asuka"] = "Eva-02"
+syncTest2["Shinji"] = "Eva-01"
 # create third dictionary object, add 3 key-value pairs
 # we can also create it as a literal
 syncTest3 = {
