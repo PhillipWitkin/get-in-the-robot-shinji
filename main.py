@@ -1,8 +1,12 @@
 def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     # this will be the final returned dictionary
     dictionary_of_results = {}
-
-    # ..... complete code .......
+    for test in pilot_tests:
+        for user, unit in test.items():
+            if not user in dictionary_of_results:
+                dictionary_of_results[user] = [unit]
+            elif not unit in dictionary_of_results[user]:
+                dictionary_of_results[user].append(unit)
 
     return dictionary_of_results
 
@@ -33,4 +37,4 @@ for test in pilotTests:
 print("\n Results:")
 results = list_of_dictionaries_to_dicitonary_of_lists(pilotTests)
 for [pilot, compatible_evas] in results.items():
-    print(pilot + " Syncs with: " + str(compatible_evas))
+    print(pilot + " Syncs with: " + str(sorted(compatible_evas)))
