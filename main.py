@@ -2,7 +2,13 @@ def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     # this will be the final returned dictionary
     dictionary_of_results = {}
 
-    # ..... complete code .......
+    for pilot_test in pilot_tests:
+        for pilot in pilot_test:
+            if pilot in dictionary_of_results:
+                if pilot_test[pilot] not in dictionary_of_results[pilot]:
+                    dictionary_of_results[pilot].append(pilot_test[pilot])
+            else:
+                dictionary_of_results[pilot] = [pilot_test[pilot]]
 
     return dictionary_of_results
 
