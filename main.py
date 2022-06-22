@@ -1,7 +1,6 @@
 def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     # this will be the final returned dictionary
     dictionary_of_results = {}
-    print(pilot_tests)
     for key in pilot_tests:
         for value in key:
             if dictionary_of_results.get(value) == None:
