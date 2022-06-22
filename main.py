@@ -2,7 +2,18 @@ def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     # this will be the final returned dictionary
     dictionary_of_results = {}
 
-    # ..... complete code .......
+    for sync_test in pilot_tests:
+        for pilot, unit in sync_test.items():
+            # check to see if that pilot is in the final dictionary
+            if pilot in dictionary_of_results:
+                # get a reference to the set of compatible units and add one
+                compatible_evas = dictionary_of_results[pilot]
+                compatible_evas.add(unit)
+            else:
+                # create a new set and add the robot to the set of that pilots compatible robots
+                compatible_evas = set()
+                compatible_evas.add(unit)
+                dictionary_of_results[pilot] = compatible_evas
 
     return dictionary_of_results
 
