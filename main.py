@@ -1,9 +1,18 @@
 def list_of_dictionaries_to_dicitonary_of_lists(pilot_tests):
     # this will be the final returned dictionary
     dictionary_of_results = {}
+    for key in pilot_tests:
+        for value in key:
+            if dictionary_of_results.get(value) == None:
+                dictionary_of_results[value] = key[value]
+            else:
+                currArr = [dictionary_of_results[value]]
+                if not key[value] in currArr:
+                    currArr.append(key[value])
+                    currArr.sort()
+                    dictionary_of_results[value] = currArr
 
     # ..... complete code .......
-
     return dictionary_of_results
 
 
