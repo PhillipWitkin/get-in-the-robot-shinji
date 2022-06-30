@@ -1,4 +1,4 @@
-# Get in the robot Shinji
+## Get in the robot Shinji
 
 * **Purpose** - To gain familiarity the following features:
   * Functions in Python
