@@ -1,14 +1,24 @@
 # Get in the robot Shinji
-### **Purpose** - To practice utilizing:
-  * The Set and Map classes in ES6 JavaScript
-  * Selecting appropriate data structures
+### **Purpose** - To practice:
+  * When to select appropriate use of the Set and Map data structures
+  * How to use the Set and Map classes in ES6 JavaScript
   
+  
+##
+
+### Overview of __Set__ and __Map__ features -
+* The _Map_ data structure (implemented under the hood by a HashTable) allows O(1) insertion of a key-value pair, O(1) deletion of a k-v pair, and O(1) lookup of a value for a key (wow!). However, the k-v pairs are __unordered__, so we sacrifice the ability to track exactly where in the Map a k-v pair is located.
+* The _Set_ data structure (also usually implemented under the hood by a HashTable) holds a collection of elements like an array, but with some important differences:
+  * Sets never contain duplicate elements
+  * The elements are unordered, so we can't depend on knowing where in the set an element is located like in an index-based array
+* For sacrificing element order in a Set, we get not only O(1) insertion and removal like with a HashMap, but also O(1) search to see if an element is present, vs O(n) search for an element in an unsorted array   
+
 ##
 ### **Description** - Complete the functions which map the input data - 
 * For mock data, we are referencing the franchise _Neon Genesis Evangelion_, where certain humans can synchronize with particular biomechanical mecha robots (Eva Units) in order to pilot them  
 * We have a collection of synchronization test results, each one containing the test results for a human pilot and a biomechanical Eva Unit they can synchronize with at the time 
 * Each test is respresnted as a map of of key-vlaue pairs with a pilot key to an Eva Unit value
-
+##
 ### 1. Complete the function __mapCompatibleUnitsByPilot__:
 
 * We want to take in an array of those tests, and respresent that data by a Map of pilots to a Set of all the Eva units they are compatible of synchronizing with (we don't want duplicate Eva unit values for a given pilot, or care about the order of their compatible Evas). 

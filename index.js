@@ -65,7 +65,7 @@ function mapCompatibleUnitsByPilot(pilotTests) {
             // check to see if that pilot is in the final map
             if (mapUnitsByPilot.has(pilot)){
                 // get a reference to the set of compatible units
-                compatibleEvas = mapUnitsByPilot.get(pilot);
+                const compatibleEvas = mapUnitsByPilot.get(pilot);
                 // add the unit for that pilot to the set of compatible Evas 
                 // since it will be a Set object, it will automatically stop duplicates (in O(1) time)
                 compatibleEvas.add(unit);
@@ -96,7 +96,7 @@ function mapCompatiblePilotsByUnit(pilotTests) {
             // check to see if that unit is in the final map
             if (mapPilotsByUnit.has(unit)){
                 // get a reference to the set of compatible pilots
-                compatiblePilots = mapPilotsByUnit.get(unit);
+                const compatiblePilots = mapPilotsByUnit.get(unit);
                 // add the pilot for that unit to the set of compatible pilots 
                 compatiblePilots.add(pilot);
 
