@@ -16,14 +16,14 @@
 ##
 ### **Description** - Complete the functions which map the input data - 
 * For mock data, we are referencing the franchise _Neon Genesis Evangelion_, where certain humans can synchronize with particular biomechanical mecha robots (Eva Units) in order to pilot them  
-* We have a collection of synchronization test results, each one containing the test results for a human pilot and a biomechanical Eva Unit they can synchronize with at the time 
-* Each test is respresnted as a map of of key-vlaue pairs with a pilot key to an Eva Unit value
+* We have a collection of synchronization test results, each one containing the sucessful ability for particular human pilots to synchronize with a biomechanical Eva Unit at the time of the test
+* Each sync test is respresnted as a map of of key-vlaue pairs with a pilot key to an Eva Unit value
 ##
-### 1. Complete the function __mapCompatibleUnitsByPilot__:
+### 1. Complete the function _mapCompatibleUnitsByPilot_:
 
 * We want to take in an array of those tests, and respresent that data by a Map of pilots to a Set of all the Eva units they are compatible of synchronizing with (we don't want duplicate Eva unit values for a given pilot, or care about the order of their compatible Evas). 
 
-#### For example:
+#### For example, using an array of the following three sync test Maps:
 ``` 
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
@@ -32,7 +32,7 @@
 ]
 ```
 
- Should return:
+ Should return a Map with a key for every pilot:
 ```
 Map(3) {
   'Rei' => Set(2) { 'Eva-00', 'Eva-01' },
@@ -43,7 +43,7 @@ Map(3) {
 * It should be able to run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space 
 
 #
-### 2. Complete the function __mapCompatiblePilotsByUnit__:
+### 2. Complete the function _mapCompatiblePilotsByUnit_:
 
 * We want to take the exact same input, but return a map this time as a Map of Eva units to 
 a Set of all the pilots that can synchronize with that Eva. Just Like before, we can use a Set because 
@@ -57,7 +57,7 @@ we don't want duplicate pilots or care about their order.
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
 ```
-Should return:
+Should return a map with a key for every Eva Unit:
 ```
 Map(3) {
   'Eva-00' => Set(2) { 'Rei', 'Shinji' },
@@ -65,7 +65,10 @@ Map(3) {
   'Eva-02' => Set(1) { 'Asuka' }
 }
 ```
-* It should also run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space  
+* It should also run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space
+
+#
+#### 3. If we used arrays instead of Sets for our final Map values, how would that change the time complexity for both problems, assuming we still didn't want duplicates in the map value arrays? 
  
 #
 ## How to Download
@@ -77,7 +80,8 @@ Map(3) {
 #### Part 2 - Cloning _forked_ repository
 * Navigate to your github profile to find the _newly forked repository_.
 * Clone the repository from **your account** into the `~/dev` directory (or a parent directory of your repositories).
-  * clone the project by executing the following command:
+  * Click the green __Code__ button, and copy the __HTTPS__ link provided 
+  * Use it to execute the command in your terminal:
     * `git clone https://github.com/${MYUSERNAME}/${NAMEOFPROJECT}`
 
 
