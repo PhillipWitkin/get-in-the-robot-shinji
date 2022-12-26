@@ -13,7 +13,7 @@ their compatible Evas).
 For example:
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
-  Map(2) { 'Asuka' => 'Eva-02', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
 
@@ -36,7 +36,7 @@ we don't want duplicate pilots or care about their order.
 The same input
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
-  Map(2) { 'Asuka' => 'Eva-02', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
 
@@ -123,8 +123,8 @@ syncTest1.set("Shinji", "Eva-01");
 
 // create input map 2 - using the built-in constructor of key-value arrays
 const syncTest2 = new Map([
-    ["Asuka", "Eva-02"],
-    ["Shinji", "Eva-01"]
+    ["Shinji", "Eva-01"],
+    ["Asuka", "Eva-02"]
 ]);
 
 // create input map 3 - from a plain JS object using Object.entries

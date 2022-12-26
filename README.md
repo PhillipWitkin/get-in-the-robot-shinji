@@ -27,7 +27,7 @@
 ``` 
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
-  Map(2) { 'Asuka' => 'Eva-02', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
 ```
@@ -53,7 +53,7 @@ we don't want duplicate pilots or care about their order.
 ```
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
-  Map(2) { 'Asuka' => 'Eva-02', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
 ```
