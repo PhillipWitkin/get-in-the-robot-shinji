@@ -25,31 +25,7 @@ Map(3) {
 }
 
 It should be able to run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space 
-
-
-2. Complete the function mapCompatiblePilotsByUnit:
-
-We want to take the exact same input, but return a map this time as a Map of Eva units to 
-a Set of all the pilots that can synchronize with that Eva. Just Like before, we can use a Set because 
-we don't want duplicate pilots or care about their order. 
-
-The same input
-[
-  Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
-  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
-  Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
-]
-
-Should return:
-Map(3) {
-  'Eva-00' => Set(2) { 'Rei', 'Shinji' },
-  'Eva-01' => Set(2) { 'Shinji', 'Rei' },
-  'Eva-02' => Set(1) { 'Asuka' }
-}
-
-It should also run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space
 */
-
 
 // takes in an array of Map objects
 // returns a Map object whose keys match all the input map keys, 
@@ -83,6 +59,32 @@ function mapCompatibleUnitsByPilot(pilotTests) {
     return mapUnitsByPilot;
 }
 
+
+
+/*
+2. Complete the function mapCompatiblePilotsByUnit:
+
+We want to take the exact same input, but return a map this time as a Map of Eva units to 
+a Set of all the pilots that can synchronize with that Eva. Just Like before, we can use a Set because 
+we don't want duplicate pilots or care about their order. 
+
+The same input
+[
+  Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
+  Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
+]
+
+Should return:
+Map(3) {
+  'Eva-00' => Set(2) { 'Rei', 'Shinji' },
+  'Eva-01' => Set(2) { 'Shinji', 'Rei' },
+  'Eva-02' => Set(1) { 'Asuka' }
+}
+
+It should also run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space
+*/
+
 // takes in an array of Map objects
 // returns a Map object whose keys match all the input map values, 
 // and values holds a Set with all matching keys for that value among all maps
@@ -112,6 +114,7 @@ function mapCompatiblePilotsByUnit(pilotTests) {
 
     return mapPilotsByUnit;
 }
+
 
 
 /// we need individual Map objects to put inside the input array
