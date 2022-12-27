@@ -25,8 +25,18 @@ Map(3) {
 }
 
 It should be able to run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space 
+*/
 
 
+// takes in an array of Map objects
+// returns a Map object whose keys match all the input map keys, 
+// and value holds a Set with all matching values for that key among all maps
+function mapCompatibleUnitsByPilot(pilotTests) {
+
+}
+
+
+/*
 2. Complete the function mapCompatiblePilotsByUnit:
 
 We want to take the exact same input, but return a map this time as a Map of Eva units to 
@@ -52,66 +62,12 @@ It should also run in O(n) time, where n = total number of k-v pairs in all the 
 
 
 // takes in an array of Map objects
-// returns a Map object whose keys match all the input map keys, 
-// and value holds a Set with all matching values for that key among all maps
-function mapCompatibleUnitsByPilot(pilotTests) {
-
-    const mapUnitsByPilot = new Map();
-
-    // iterate through the array of syncTests 
-    for (const syncTest of pilotTests){
-        // iterate through each pilot-unit key-value pair present in a syncTest
-        for (const [pilot, unit] of syncTest){
-            // check to see if that pilot is in the final map
-            if (mapUnitsByPilot.has(pilot)){
-                // get a reference to the set of compatible units
-                const compatibleEvas = mapUnitsByPilot.get(pilot);
-                // add the unit for that pilot to the set of compatible Evas 
-                // since it will be a Set object, it will automatically stop duplicates (in O(1) time)
-                compatibleEvas.add(unit);
-
-            } else {
-                // create a new set for that pilots compatible Evas, and add the Eva from that sync test
-                const compatibleEvas = new Set();
-                compatibleEvas.add(unit);
-                // add the set for that pilot as a key-value pair to the final map
-                mapUnitsByPilot.set(pilot, compatibleEvas);
-            }
-        }
-    }
-
-    return mapUnitsByPilot;
-}
-
-// takes in an array of Map objects
 // returns a Map object whose keys match all the input map values, 
 // and values holds a Set with all matching keys for that value among all maps
 function mapCompatiblePilotsByUnit(pilotTests) {
 
-    const mapPilotsByUnit = new Map();
-
-    for (const syncTest of pilotTests){
-
-        for (const [pilot, unit] of syncTest){
-            // check to see if that unit is in the final map
-            if (mapPilotsByUnit.has(unit)){
-                // get a reference to the set of compatible pilots
-                const compatiblePilots = mapPilotsByUnit.get(unit);
-                // add the pilot for that unit to the set of compatible pilots 
-                compatiblePilots.add(pilot);
-
-            } else {
-                // create a new set for that pilots compatible Evas, and add the Pilot from that sync test
-                const compatiblePilots = new Set();
-                compatiblePilots.add(pilot);
-                // add the set for that pilot as a key-value pair to the final map
-                mapPilotsByUnit.set(unit, compatiblePilots);
-            }
-        }
-    }
-
-    return mapPilotsByUnit;
 }
+
 
 
 /// we need individual Map objects to put inside the input array
