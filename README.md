@@ -1,4 +1,16 @@
-alement is located like in an index-based array
+# Get in the robot Shinji
+### **Purpose** - To practice:
+  * When to select appropriate use of the Set and Map data structures
+  * How to use the Set and Map classes in ES6 JavaScript
+  
+  
+##
+
+### Overview of __Set__ and __Map__ features -
+* The _Map_ data structure (implemented under the hood by a HashTable) allows O(1) insertion of a key-value pair, O(1) deletion of a k-v pair, and O(1) lookup of a value for a key (wow!). However, the k-v pairs are __unordered__, so we sacrifice the ability to track exactly where in the Map a k-v pair is located.
+* The _Set_ data structure (also usually implemented under the hood by a HashTable) holds a collection of elements like an array, but with some important differences:
+  * Sets never contain duplicate elements
+  * The elements are unordered, so we can't depend on knowing where in the set an element is located like in an index-based array
 * For sacrificing element order in a Set, we get not only O(1) insertion and removal like with a HashMap, but also O(1) search to see if an element is present, vs O(n) search for an element in an unsorted array   
 
 ##
@@ -57,6 +69,7 @@ Map(3) {
 
 #
 #### 3. If we used arrays instead of Sets for our final Map values, how would that change the time complexity for both problems, assuming we still didn't want duplicates in the map value arrays? 
+
  
 
 
