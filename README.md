@@ -1,66 +1,63 @@
-# Get in the robot Shinji
+alement is located like in an index-based array
+* For sacrificing element order in a Set, we get not only O(1) insertion and removal like with a HashMap, but also O(1) search to see if an element is present, vs O(n) search for an element in an unsorted array   
 
-* **Purpose** - To gain familiarity the following features:
-  * Functions in Python
-  * Dictionaries and lists
-  
+##
+### **Description** - Complete the functions which map the input data - 
+* For mock data, we are referencing the franchise _Neon Genesis Evangelion_, where certain humans can synchronize with particular biomechanical mecha robots (Eva Units) in order to pilot them  
+* We have a collection of synchronization test results, each one containing the sucessful ability for particular human pilots to synchronize with a biomechanical Eva Unit at the time of the test
+* Each sync test is respresnted as a map of of key-vlaue pairs with a pilot key to an Eva Unit value
+##
+### 1. Complete the function _mapCompatibleUnitsByPilot_:
 
-* **Description** - Complete the function which takes in a list of dictionaries and returns a dictionary of sets. 
-* Each entry of the input list is a dictionary that represents a Sync Test of each Pilot being able to synchronize with a mecha robot _(Evas from the anime Neon Genesis Evangelion)_ ,  the list is a list of all the Sync Tests
-* The output dictionary should be entries consisting of a pilot as key with value to a Set (no duplicates) of that pilots compatible Evas from every Sync Test 
+* We want to take in an array of those tests, and respresent that data by a Map of pilots to a Set of all the Eva units they are compatible of synchronizing with (we don't want duplicate Eva unit values for a given pilot, or care about the order of their compatible Evas). 
+
+#### For example, using an array of the following three sync test Maps:
+``` 
+[
+  Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
+  Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
+]
+```
+
+ Should return a Map with a key for every pilot:
+```
+Map(3) {
+  'Rei' => Set(2) { 'Eva-00', 'Eva-01' },
+  'Shinji' => Set(2) { 'Eva-01', 'Eva-00' },
+  'Asuka' => Set(1) { 'Eva-02' }
+}
+```
+* It should be able to run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space 
+
+#
+### 2. Complete the function _mapCompatiblePilotsByUnit_:
+
+* We want to take the exact same input, but return a map this time as a Map of Eva units to 
+a Set of all the pilots that can synchronize with that Eva. Just Like before, we can use a Set because 
+we don't want duplicate pilots or care about their order. 
+
+#### The same input
+```
+[
+  Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
+  Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
+  Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
+]
+```
+Should return a map with a key for every Eva Unit:
+```
+Map(3) {
+  'Eva-00' => Set(2) { 'Rei', 'Shinji' },
+  'Eva-01' => Set(2) { 'Shinji', 'Rei' },
+  'Eva-02' => Set(1) { 'Asuka' }
+}
+```
+* It should also run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space
+
+#
+#### 3. If we used arrays instead of Sets for our final Map values, how would that change the time complexity for both problems, assuming we still didn't want duplicates in the map value arrays? 
+ 
 
 
 
-
-## How to Download
-
-#### Part 1 - Forking the Project
-* To _fork_ the project, click the `Fork` button located at the top right of the project.
-
-
-#### Part 2 - Navigating to _forked_ Repository
-* Navigate to your github profile to find the _newly forked repository_.
-* Copy the URL of the project to the clipboard.
-
-#### Part 3 - Cloning _forked_ repository
-* Clone the repository from **your account** into the `~/dev` directory (or the parent directory of your repositories).
-  * if you do not have a `~/dev` directory, make one by executing the following command:
-    * `mkdir ~/dev`
-  * navigate to the `~/dev` directory by executing the following command:
-    * `cd ~/dev`
-  * clone the project by executing the following command:
-    * `git clone https://github.com/${MYUSERNAME}/${NAMEOFPROJECT}`
-
-#### Part 4 - Setting upstream remote (optional)
-* Link the local repository just created with the original you forked from 
-  * If new content is added to this repository, you can pull the new changes, but the remote 'origin' points to your forked version
-  * Add another remote and call it 'upstream':
-    * `git remote add upstream https://github.com/{FORKSOURCE}/get_in_the-robot_shinji`
-* To fetch or pull changes, we tell git to look at the Github upstream remote (pointing here) instead of the origin remote (which points to your fork):
-  * For git to try and merge changes, we use git pull <remote> <branch>:
-    * `git pull upstream main`
-  * In case there of a merge conflict, we can update all remote branches, but save merging for later using git fetch <remote>:
-    * `git fetch upstream`
-
-
-
-
-## How to Submit
-
-#### Part 1 -  _Pushing_ local changes to remote repository
-* from a _terminal_ navigate to the root directory of the _cloned_ project.
-
-* from the root directory of the project, execute the following commands:
-    * Checkout into the _boilerplate_ branch
-      * `git checkout boilerplate`
-    * add all changes
-      * `git add .`
-    * commit changes to be pushed in the _boilerplate_ branch
-      * `git commit -m 'I have added changes'`
-    * push changes to your repository remote _boilerplate_ branch
-      * `git push -u origin boilerplate`
-
-#### Part 2 - Submitting assignment 
-* from the browser, navigate to the _forked_ project from **your** github account.
-* click the `Pull Requests` tab.
-* select `New Pull Request`

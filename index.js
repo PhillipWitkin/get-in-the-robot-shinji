@@ -1,24 +1,31 @@
 /*
 We have a collection of synchronization test results, 
-each one containing the test results for a human pilot and a biomechanical Eva Unit they can synchronize with at the time, 
+each one containing the test results for a human pilot attempting to synchronize with a biomechanical Eva Unit at the time, 
 where each test is respresnted as a map of of key-vlaue pairs with a pilot key to an Eva Unit value
+
 1. Complete the function mapCompatibleUnitsByPilot:
-We want to take in an array of those tests, and respresent that data by a Map of pilots  
-to a Set of all the Eva units they are compatible of synchronizing with 
+We want to take in an array of those tests, and respresent that data by a Map of Pilots as keys,  
+with values as the Set of all the Eva units that pilot is compatible of synchronizing with.
 (we don't want duplicate Eva unit values for a given pilot, or care about the order of 
 their compatible Evas). 
-For example:
+
+For example, input:
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
   Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
+
 Should return:
 Map(3) {
   'Rei' => Set(2) { 'Eva-00', 'Eva-01' },
   'Shinji' => Set(2) { 'Eva-01', 'Eva-00' },
   'Asuka' => Set(1) { 'Eva-02' }
 }
+
+The final map collects the compatible EVA units from all of the input test results, 
+and makes a Set of them for all Pilots featured in any of the tests.
+
 It should be able to run in O(n) time, where n = total number of k-v pairs in all the input maps, and O(n) space 
 */
 
@@ -36,12 +43,14 @@ function mapCompatibleUnitsByPilot(pilotTests) {
 We want to take the exact same input, but return a map this time as a Map of Eva units to 
 a Set of all the pilots that can synchronize with that Eva. Just Like before, we can use a Set because 
 we don't want duplicate pilots or care about their order. 
-The same input
+
+The same input:
 [
   Map(2) { 'Rei' => 'Eva-00', 'Shinji' => 'Eva-01' },
   Map(2) { 'Shinji' => 'Eva-01', 'Asuka' => 'Eva-02' },
   Map(3) { 'Shinji' => 'Eva-00', 'Rei' => 'Eva-01', 'Asuka' => 'Eva-02' }
 ]
+
 Should return:
 Map(3) {
   'Eva-00' => Set(2) { 'Rei', 'Shinji' },
